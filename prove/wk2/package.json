@@ -1,20 +1,22 @@
 {
-  "name": "wk2",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "week2 prove",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "Modesto Imayaho Jr.",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "ejs": "^2.7.4",
+    "express": "^4.17.2",
+    "express-handlebars": "^3.0.0",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^1.19.4"
   }
 }
