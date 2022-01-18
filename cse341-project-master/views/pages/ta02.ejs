@@ -16,9 +16,29 @@
       </div>
     </div>
     <div class="container">
+      <form action="/ta02/addUser" method="POST" id="addNewuser">
+        <label for="newUser"></label>
+        <input type="text" name="newUser">
+        <button type="submit">Add New User</button>
+    </form>
+  </div>
+    
+  
+   <ul id="users">
+    <% for(user of users) { %>
+      <li><%= user %></li>
+    <% } %>
+  </ul>
 
-    </div>
+  <form action="/ta02/removeUser" method="POST">
+    <label for="removeUser">Select to remove</label>
+    <select name="removeUser">
+      <% for(user of users) { %>
+        <option><%= user %></option>
+      <% } %>
+    </select>
 
+  </form>
 
 </body>
 
