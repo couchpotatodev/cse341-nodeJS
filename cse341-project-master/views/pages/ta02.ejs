@@ -30,16 +30,26 @@
     <% } %>
   </ul>
 
+  <form action="/ta02/removeUser" method="POST" id="removeUser">
+    <label for="remUser"></label>
+    <input type="text" name="remUser">
+    <button type="submit">Remove User</button>
+</form>
+
+  <!--
   <form action="/ta02/removeUser" method="POST">
-    <label for="removeUser">Select to remove</label>
-    <select name="removeUser">
+    <label for="remUser">Select to remove</label>
+    <select name="remUser">
       <% for(user of users) { %>
-        <option><%= user %></option>
+        <option><%= user %></option>    
+        
       <% } %>
     </select>
-
+     
+     
   </form>
-
+-->
+ 
 </body>
 
 </html>
