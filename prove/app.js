@@ -102,7 +102,7 @@ mongoose
     MONGODB_URI, options
   )
   .then(result => {
-   User.findOne().then(user => {
+  /* User.findOne().then(user => {
       if (!user) {
         const user = new User({
           name: 'Max',
@@ -113,8 +113,9 @@ mongoose
         });
         user.save();
       }
-    });   
+    });   */
     app.listen(PORT);
+    console.log(result);
   })
   .catch(err => {
     console.log(err);
