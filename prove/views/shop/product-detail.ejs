@@ -14,5 +14,8 @@
             <% if (isAuthenticated) { %>
                 <%- include('../includes/add-to-cart.ejs', {product: product}) %>
             <% } %>
+            <div class="centered">
+                <a href="/products" class="btn">Back</a>
+            </div>
         </main>
         <%- include('../includes/end.ejs') %>

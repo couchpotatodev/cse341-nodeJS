@@ -8,6 +8,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
 
+
 const PORT = process.env.PORT || 5000
 const errorController = require('./controllers/error');
 const User = require('./models/user');
@@ -34,8 +35,6 @@ const options = {
     useFindAndModify: false,
     family: 4
 };
-
-//const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://tonski:hstHS1um8UJxHaBj@cluster0.dx2uj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 
 app.set('view engine', 'ejs');
@@ -81,28 +80,7 @@ app.use((req, res, next) => {
   .catch(err => {
     next(new Error(err));
   });
-
-/*  User.findById(req.session.user._id)
-    .then(user => {
-      req.user = user;
-      next();
-    })
-    .catch(err => console.log(err)); */
-  //  .catch(err => {
-    //  next(new Error(err));
-  //  });
 });
-
-/*app.use((req, res, next) => {
-  User.findById('61f62cdbe5e9ec31cc667453')
-    .then(user => {
-      req.user = user;
-      next();
-    })
-    .catch(err => console.log(err));
-});
-*/
-
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
@@ -144,28 +122,3 @@ mongoose
 
 
 
-
- 
-/*mongoose
-  .connect(
-    'mongodb+srv://tonski:hstHS1um8UJxHaBj@cluster0.dx2uj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-  )
-  .then(result => {
-    User.findOne().then(user => {
-      if (!user) {
-        const user = new User({
-          name: 'Max',
-          email: 'max@test.com',
-          cart: {
-            items: []
-          }
-        });
-        user.save();
-      }
-    });
-    app.listen(3000);
-  })
-  .catch(err => {
-    console.log(err);
-  });
-*/
